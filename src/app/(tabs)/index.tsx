@@ -1,5 +1,6 @@
 import { View, Text, TouchableOpacity,StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
+import PrimaryButton from '@/src/components/buttons/ButtonPrimary/ButtonPrimary';
 
 export default function HomeScreen() {
     const router = useRouter();
@@ -52,6 +53,8 @@ export default function HomeScreen() {
       >
         <Text style={styles.buttonText}>Daftar Akun Baru</Text>
       </TouchableOpacity>
+
+      <PrimaryButton onPress={()=>{}} title='test'></PrimaryButton>
 
       <TouchableOpacity
         style={[styles.button, styles.buttonOutline]}
