@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { View, Text, ScrollView, StyleSheet, Dimensions, TouchableOpacity } from "react-native";
 import { LineChart } from "react-native-chart-kit";
 import { useRouter } from "expo-router";
+import  PrimaryButton from "@/src/components/buttons/ButtonPrimary/ButtonPrimary";
 
 export default function mainDashboard() {
     const [heartRate, setHeartRate] = useState(75);
@@ -109,9 +110,7 @@ export default function mainDashboard() {
         bezier
         style={{ borderRadius: 12 }}
       />
-       <TouchableOpacity style={styles.botton} onPress={navLogin}>
-                <Text style={styles.buttontext}>Login</Text>
-            </TouchableOpacity>
+       <PrimaryButton title="Login" onPress={navLogin}></PrimaryButton>
     </ScrollView>
     );
 }
