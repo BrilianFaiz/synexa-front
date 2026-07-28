@@ -1,10 +1,11 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { useRouter } from 'expo-router';
 import PrimaryButton from '@/src/components/buttons/ButtonPrimary/ButtonPrimary';
+import SecondaryButton from '@/src/components/buttons/SecondaryButton/ButtonSecondary';
 
 export default function HomeScreen() {
   const router = useRouter();
-
+  
   const styles = StyleSheet.create({
     container: {
       flex: 1,
@@ -52,10 +53,10 @@ export default function HomeScreen() {
         onPress={() => router.push('/register')}
       ></PrimaryButton>
 
-      <PrimaryButton
+      <SecondaryButton
         onPress={() => router.push('/login')}
         title='Sudah Punya Akun? Login'
-      ></PrimaryButton>
+      ></SecondaryButton>
 
       <PrimaryButton onPress={() => router.push('/dashboard')} title='Coba dashboard'></PrimaryButton>
     </View>
