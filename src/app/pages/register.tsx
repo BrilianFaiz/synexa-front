@@ -1,6 +1,7 @@
 import { useRouter } from 'expo-router';
 import {useState} from 'react';
-import {View, Text, StyleSheet,TouchableOpacity, TextInput} from 'react-native';
+import { Text, StyleSheet,TouchableOpacity, TextInput} from 'react-native';
+import { GradientContainer } from '@/src/components/pagesTemplate/GradientContainer'; 
 
 export default function Register() {
     // Menerapkan konsep 'state' untuk mengingat input pengguna. 
@@ -57,7 +58,7 @@ export default function Register() {
 
     return (
         // <View> adalah wadah utama komponen, bertindak seperti <div> di pengembangan web.
-        <View style={styles.container}>
+        <GradientContainer>
             <Text style={styles.title}>Daftarkan Akun</Text>
             
             {/* TextInput pertama menerapkan 'controlled input'. 
@@ -99,7 +100,7 @@ export default function Register() {
             <TouchableOpacity style={styles.buton} onPress={navLogin}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
-        </View> 
+        </GradientContainer>
 
     );
 }

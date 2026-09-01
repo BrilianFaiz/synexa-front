@@ -29,7 +29,7 @@ fontweight: "normal",
 },
 button:{
 fontfamily: "Inter",
-fontsize: 14,
+fontsize: 11,
 fontweight: "bold",
 },
 error:{

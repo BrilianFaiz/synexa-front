@@ -2,6 +2,7 @@
 
 export const radius = {
   none : 0, 
+  xm :1,
   sm : 2,
   md : 4,
   lg : 8,

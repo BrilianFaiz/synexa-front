@@ -3,6 +3,7 @@ import { View, Text, ScrollView, StyleSheet, Dimensions, TouchableOpacity } from
 import { LineChart } from "react-native-chart-kit";
 import { useRouter } from "expo-router";
 import  PrimaryButton from "@/src/components/buttons/ButtonPrimary/ButtonPrimary";
+import { GradientContainer } from '@/src/components/pagesTemplate/GradientContainer';
 
 export default function mainDashboard() {
     const [heartRate, setHeartRate] = useState(75);
@@ -75,10 +76,12 @@ export default function mainDashboard() {
         },
     });
 
-    return (
-         <ScrollView style={styles.container}>
-      <Text style={styles.title}>Dashboard Monitoring</Text>
+    return (<GradientContainer>
 
+         <ScrollView >
+    
+      <Text style={styles.title}>Dashboard Monitoring</Text>
+        
       <View style={styles.cardRow}>
         <View style={styles.card}>
           <Text style={styles.cardLabel}>Detak Jantung</Text>
@@ -112,5 +115,6 @@ export default function mainDashboard() {
       />
        <PrimaryButton title="Login" onPress={navLogin}></PrimaryButton>
     </ScrollView>
+    </GradientContainer>
     );
 }
