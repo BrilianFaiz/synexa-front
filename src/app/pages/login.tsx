@@ -4,13 +4,15 @@ import { useRouter } from "expo-router";
 
 import SecondaryButton from "@/src/components/buttons/SecondaryButton/ButtonSecondary";
 import { login } from "@/src/services/authService";
+import { useAuth } from "@/src/context/authContext";
 
 export default function Login() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const { refreshUser } = useAuth();
+  
   const handleLogin = async () => {
   if (!email.trim() || !password.trim()) {
     Alert.alert(
@@ -31,12 +33,14 @@ export default function Login() {
   setIsLoading(true);
 
   try {
-    const response = await login({
-      email,
-      password,
-    });
+  const response = await login({
+  email,
+  password,
+});
 
-    console.log("LOGIN:", response);
+console.log("LOGIN:", response);
+
+await refreshUser();
 
     Alert.alert(
       "Login Berhasil",
@@ -44,7 +48,7 @@ export default function Login() {
       [
         {
           text: "OK",
-          onPress: () => router.replace("/dashboard"),
+          onPress: () => router.replace("/"),
         },
       ]
     );

@@ -1,5 +1,5 @@
 import { apiFetch } from "./api";
-import { setToken } from "../storage/authStorage";
+import {setToken,removeToken,} from "../storage/authStorage";
 
 export interface RegisterData {
   name: string;
@@ -28,6 +28,16 @@ export async function login(data: LoginData) {
   await setToken(response.token);
 
   return response;
+}
+
+export async function logout() {
+  try {
+    await apiFetch("/logout", {
+      method: "POST",
+    });
+  } finally {
+    await removeToken();
+  }
 }
 
 export async function getUser() {
