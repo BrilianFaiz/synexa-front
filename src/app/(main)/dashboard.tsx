@@ -103,10 +103,7 @@ export default function MainDashboard() {
             }}
           />
 
-          <PrimaryButton
-            title="Logout"
-            onPress={logout}
-          />
+          
         </ScrollView>
       </GradientContainer>
     </AuthGuard>
